@@ -45,5 +45,4 @@ I am now mainly interested in LLM safety, in addition to completing the current 
 
 Feel free to reach out if you'd like to discuss machine learning research, in particular LLMs, or potential collaborations!
 
-## Website TODO
-Trivia and links don't work and GPT-5 doesn't know to debug? Check back later
+
