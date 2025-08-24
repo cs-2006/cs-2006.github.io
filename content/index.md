@@ -4,7 +4,7 @@ draft: false
 ---
 
 <div id="about-me-photo">
-<img src="/static/ning-photo.jpg" alt="Ning Wang">
+<img src="/static/96168057.png" alt="Ning Wang">
 </div>
 
 # About Me
