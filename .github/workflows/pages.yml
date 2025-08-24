@@ -1,0 +1,79 @@
+name: Build and Deploy Pages
+
+on:
+  push:
+    branches: [ main ]      # If your default branch is 'master', change this to [ master ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Install pandoc
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc
+
+      - name: Build site (publish non-drafts)
+        run: |
+          set -e
+          rm -rf public
+          mkdir -p public/static
+
+          # Build only files with 'draft: false' in front matter
+          for file in content/*.md; do
+            [ -f "$file" ] || continue
+            if grep -q "^draft: *false" "$file"; then
+              echo "Building $file"
+              out="public/$(basename "$file" .md).html"
+              pandoc "$file" -o "$out" --template=template.html --katex
+            else
+              echo "Skipping draft: $file"
+            fi
+          done
+
+          # Copy static assets → public/static/
+          if [ -d static ]; then
+            cp -r static/* public/static/ 2>/dev/null || true
+          fi
+
+          # Copy root files (unless explicitly marked draft:true)
+          if [ -d root ]; then
+            for rf in root/*; do
+              [ -f "$rf" ] || continue
+              if ! grep -q "^draft: *true" "$rf" 2>/dev/null; then
+                cp "$rf" public/
+              fi
+            done
+          fi
+
+          # Ensure GitHub Pages doesn’t run Jekyll
+          touch public/.nojekyll
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
