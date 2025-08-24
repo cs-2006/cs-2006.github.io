@@ -7,6 +7,7 @@ I've started doing research 5 months ago or so. Most of my work is in progress, 
 
 ## Papers
 TODO: add paper links when they're published (at least on ArXiv)
+
 ### 2025
 - **[Paper Title]**  
   Authors: Ning Wang, [Other Authors]  
