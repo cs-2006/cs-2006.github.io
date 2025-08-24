@@ -4,39 +4,43 @@ draft: false
 ---
 # Now
 
-*Last updated: [Month Year]*
+*Last updated: 08-2025*
 
 ## What I'm Working On
 
-Currently in my Master's program at ETH Zurich, focusing on [your field of study].
+Currently in my Master's program at ETH Zurich, focusing on machine learning. 
 
 ### Current Projects
 
-- [Project 1: Brief description]
-- [Project 2: Brief description]
-- [Research topic you're exploring]
+See main page. TODO: add detailed project descriptions
 
-### Courses This Semester
+### Some Relevant (ML or related) Courses I've Taken
 
-- [Course name and what interests you about it]
-- [Another course]
-- [Another course]
+- Advanced ML 
+- Probabilistic AI
+- Computational Intelligence Lab
+- AI Center Projects in ML Research
+- Deep Learning
+- Computational Semantics for NLP
+- Diffusion Models, Sampling and Stochastic Localization
+- Machine Perception
+- Complex Network Models
+- Pattern matching beyond i.i.d. data (seminar)
+- Advanced Topics in Machine Learning (seminar)
 
 ## What I'm Learning
 
-- [New skill or technology you're picking up]
-- [Book or paper series you're reading]
-- [Online course or tutorial you're following]
+Reading research papers and learning about automation tools
 
 ## What I'm Thinking About
 
-[Add thoughts about your field, interesting problems you're pondering, or ideas you're exploring]
+How to make LLMs safe and performant?
 
 ## Outside Academia
 
-- [Hobby or interest]
-- [Another activity you enjoy]
-- [Something fun you're doing]
+- Music
+- Table tennis
+- Formerly gaming (not anymore)
 
 ---
 
