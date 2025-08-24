@@ -3,6 +3,8 @@ title: "Links"
 draft: false
 ---
 # Links
+This website is built from [Daniel Paleka](https://danielpaleka.com/)'s website template. 
+The following links will be updated soon.
 
 ## My Profiles
 
