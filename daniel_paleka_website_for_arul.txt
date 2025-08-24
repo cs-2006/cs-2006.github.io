@@ -1,0 +1,209 @@
+build.sh
+---
+#!/bin/bash
+trash public/*
+for file in content/*.md; do
+    pandoc $file -o public/$(basename $file .md).html --template=template.html --katex
+done
+cp -r static public/
+
+
+---
+publish.sh
+---
+#!/bin/bash
+
+# Function to check if a file is a draft
+is_draft() {
+    local file="$1"
+    grep -q "^draft: *false" "$file"
+    return $?
+}
+
+# Clear the public directory
+trash public/*
+
+# Create a temporary file to store the list of published files
+published_files=$(mktemp)
+
+# Process Markdown files
+for file in content/*.md; do
+    if is_draft "$file"; then
+        echo "Processing: $file"
+        output_file="public/$(basename "$file" .md).html"
+        pandoc "$file" -o "$output_file" --template=template.html --katex
+        echo "$output_file" | sed 's|^public/||' >> "$published_files"
+    else
+        echo "Skipping draft: $file"
+    fi
+done
+
+# Copy static files and root files
+mkdir -p public/static
+cp -r static/* public/static/
+find static -type f | sed 's|^static/|static/|' >> "$published_files"
+for root_file in root/*; do
+    if [ -f "$root_file" ] && ! is_draft "$root_file"; then
+        cp "$root_file" public/
+        basename "$root_file" >> "$published_files"
+    fi
+done
+
+# Change to the public directory
+cd public
+
+# Delete files that are in the upstream but not in the current build
+git ls-files | grep -vFf "$published_files" | xargs -r git rm -f
+
+# Commit and push changes
+git add *
+git commit -m "Rebuilding site $(date)"
+git push origin HEAD:master
+
+# Clean up
+rm "$published_files"
+
+
+---
+serve.sh
+---
+#!/bin/bash
+npx http-server public
+
+
+---
+template.html
+---
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/static/favicon-32x32.png">
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>$if(pagetitle)$$pagetitle$$else$$title$ | Daniel Paleka$endif$</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Daniel Paleka</h1>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/links">Links</a></li>
+                <li><a href="/now">Now</a></li>
+                <li><a href="/what-i-use">Setup</a></li>
+                <li><a href="https://scholar.google.com/citations?user=9e_KfoEAAAAJ">Publications</a></li>
+                <li><a href="https://dpaleka.substack.com">Newsletter</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        $body$
+    </main>
+</body>
+
+
+---
+static/style.css
+---
+:root {
+    --color-bg: #fff;
+    --color-text: #212121;
+    --color-link: #5f9b65;
+    --font-family: warnock-pro, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+    --width-content: 800px;
+}
+
+a {
+    font-weight: normal;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 0.1rem;
+    text-underline-offset: 0.2rem;
+}
+
+nav a {
+    color: var(--color-text);
+}
+
+nav {
+    font-family: GreekFallback, Calibri, "Gill Sans", "Gill Sans MT", Myriad Pro, Myriad, "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-bottom: 1rem;
+}
+
+#about-me-photo {
+    max-width: 180px;
+    max-height: 180px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#about-me-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+@media screen and (min-width: 480px) {
+    #about-me-photo {
+        float: right;
+        margin-left: 40px;
+        margin-bottom: 40px;
+    }
+}
+
+sup {
+    all: revert;
+}
+
+
+---
+content/now.md
+---
+---
+title: "Now"
+draft: false
+---
+# Now
+
+In the third year of my PhD at ETH Zurich; in Berkeley from January to March 2025.
+
+Thinking about what to do next. Some ideas:
+
+- Red-teaming an LM by training an "output -> prompt" LM;
+- Demoing LLM agents doing weird stuff on the Internet on their own;
+- Consistency as training signal on difficult tasks;
+- "Thought that faster" as training signal on easy tasks.
+
+Reading many safety papers published recently, 
+and summarizing the most important ones on my
+[Substack newsletter](https://newsletter.danielpaleka.com/) and [Twitter](https://twitter.com/dpaleka).
+
+I continue to believe that we passed peak data relevance some time ago, and that future models will draw most of their training signal from some kind of reinforcement learning or self-distillation. I've had this sentence on my website since 2022.
+
+Ten papers in my PhD so far, more soon:
+
+- [Consistency Checks for Language Model Forecasters](https://arxiv.org/abs/2412.18544)
+- [Refusal in Language Models Is Mediated by a Single Direction](https://arxiv.org/abs/2406.11717)
+- [Dataset and Lessons Learned from the 2024 SaTML LLM Capture-the-Flag Competition](https://arxiv.org/abs/2406.07954)
+- [Stealing part of a production language model](https://arxiv.org/abs/2403.06634) *Best Paper Award at ICML 2024*
+- [Foundational Challenges in Assuring Alignment and Safety of Large Language Models](https://arxiv.org/abs/2404.09932)
+- [Evaluating Superhuman Models with Consistency Checks](https://arxiv.org/abs/2306.09983)
+- [ARB: Advanced Reasoning Benchmark for Large Language Models](https://arxiv.org/abs/2307.13692)
+- [Poisoning Web-Scale Training Datasets is Practical](https://arxiv.org/abs/2302.10149)
+- [Red-Teaming the Stable Diffusion Safety Filter](https://arxiv.org/abs/2210.04610)
+- [A law of adversarial risk, interpolation, and label noise](https://arxiv.org/abs/2207.03933)
+
+-----------------------------
+
+Last updated December 2024.
+
+[What is a "now" page?](https://nownownow.com/about)
+
+
+---

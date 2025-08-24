@@ -1,0 +1,33 @@
+# Generated HTML files (built from markdown)
+public/
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-*
+
+# Node modules (if npm is used)
+node_modules/
+
+# Log files
+*.log
+
+# Backup files
+*.bak
+*.backup
+
+# Personal notes (if any)
+notes.txt
+TODO.txt

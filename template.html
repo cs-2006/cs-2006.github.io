@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/static/favicon-32x32.png">
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>$if(pagetitle)$$pagetitle$$else$$title$ | Ning Wang$endif$</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Ning Wang</h1>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/now">Now</a></li>
+                <li><a href="/publications">Publications</a></li>
+                <li><a href="/trivia">Trivia</a></li>
+                <li><a href="/links">Links</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        $body$
+    </main>
+</body>
+</html>
