@@ -2,6 +2,10 @@
 
 A minimal academic personal website built with Pandoc and static HTML.
 
+## TODO
+
+Trivia and links don't work and GPT-5 doesn't know to debug? Check later
+
 ## Structure
 
 - `content/` - Markdown source files for all pages
