@@ -34,8 +34,8 @@ TODO: add paper links when they're published (at least on ArXiv)
 
 ## Academic Service
 
-- Reviewer: [Conference/Journal names]
-- Teaching Assistant: [Course names and semesters]
+- Reviewer: ICML 2025 AI4MATH workshop 
+- Teaching Assistant: Wireless networking and mobile computing, autumn semester 2023 (ETH Zurich)
 
 ## Awards & Honors
 
