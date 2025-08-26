@@ -12,7 +12,21 @@ Currently in my Master's program at ETH Zurich, focusing on machine learning.
 
 ### Current Projects
 
-See main page. TODO: add detailed project descriptions
+I worked on / am working on the following projects:
+
+- Sparse time series prediction using a custom Transformer, MoE, and benchmarking the performance of these models and models such as Chronos, Sundial, TimeSFM,...
+
+- Coding perturbation for LLM training data contamination detection, using ICL, context and constraint perturbations
+  
+- Cross-domain transferability of fine-tuning smaller models using CoT of larger models (for domains like math, physics, coding)
+  
+I have assisted in the following projects:
+
+- Benchmarking the performance of LLMs in TCS, in particular Lean proofs (Busy Beavers and Mixed Boolean Arithmetic), ICML workshop paper
+  
+- Benchmarking the performance of LLMs in questions retrieved from ArXiv papers, across time to detect the effect of knowledge cutoff (result being the models being actually better after the cutoff), in submission
+  
+I am now mainly interested in LLM safety, in addition to completing the current ongoing projects. 
 
 ### Some Relevant (ML or related) Courses I've Taken
 
