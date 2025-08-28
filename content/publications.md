@@ -18,7 +18,7 @@ I've started doing research 5 months ago or so. Most of my work is in progress, 
 ## Talks & Presentations
 
 - **[Evaluating the representational power of pre‐trained DNA language models for regulatory genomics]** - [Seminar Pattern matching beyond i.i.d. data @ ETH Zurich], [March 2025]
-- **[Automatic Integration for Spatiotemporal Neural Point Processes]** - [Seminar Advanced Topics in Machine Learning @ ETH Zurich, [November 2024]
+- **[Automatic Integration for Spatiotemporal Neural Point Processes]** - [Seminar Advanced Topics in Machine Learning @ ETH Zurich], [November 2024]
 
 ## Academic Service
 
