@@ -22,7 +22,8 @@ I've started doing research 5 months ago or so. Most of my work is in progress, 
 
 ## Academic Service
 
-- Reviewer: ICML 2025 AI4MATH workshop 
+- Reviewer: ICML 2025 AI4MATH workshop
+- Research Assistant: deep learning for economics, November 2024 - Present (ETH Zurich), language models for genomics, August 2025 - Present (Max Planck Institute for Intelligent Systems)
 - Teaching Assistant: Wireless networking and mobile computing, autumn semester 2023 (ETH Zurich)
 
 
