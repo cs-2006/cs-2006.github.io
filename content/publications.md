@@ -8,7 +8,7 @@ I've started doing research 5 months ago or so. Most of my work is in progress, 
 ## Papers
 
 ### 2025
-- **[Lean Meets Theoretical Computer Science: Scalable Synthesis of Theorem Proving Challenges in Formal-Informal Pairs]**  
+- **Lean Meets Theoretical Computer Science: Scalable Synthesis of Theorem Proving Challenges in Formal-Informal Pairs**  
   Authors: TJ Zhang, W Jiang, R Liu, Y Wang, **N Wang**, J Yang, Y Huang, M Sachan
   *AI4Math@ICML25*, 2025  
   [[OpenReview]](https://openreview.net/forum?id=snoHekTbpd#discussion) 
@@ -17,8 +17,8 @@ I've started doing research 5 months ago or so. Most of my work is in progress, 
 
 ## Talks & Presentations
 
-- **[Evaluating the representational power of pre‐trained DNA language models for regulatory genomics]** - [Seminar Pattern matching beyond i.i.d. data @ ETH Zurich], [March 2025]
-- **[Automatic Integration for Spatiotemporal Neural Point Processes]** - [Seminar Advanced Topics in Machine Learning @ ETH Zurich], [November 2024]
+- **Evaluating the representational power of pre‐trained DNA language models for regulatory genomics** - Seminar Pattern matching beyond i.i.d. data @ ETH Zurich, March 2025
+- **Automatic Integration for Spatiotemporal Neural Point Processes** - Seminar Advanced Topics in Machine Learning @ ETH Zurich, November 2024
 
 ## Academic Service
 
