@@ -9,7 +9,7 @@ I've started doing research 5 months ago or so. Most of my work is in progress, 
 
 ### 2025
 - **Lean Meets Theoretical Computer Science: Scalable Synthesis of Theorem Proving Challenges in Formal-Informal Pairs**  
-  Authors: TJ Zhang, W Jiang, R Liu, Y Wang, **N Wang**, J Yang, Y Huang, M Sachan
+  [Authors: TJ Zhang, W Jiang, R Liu, Y Wang, **N Wang**, J Yang, Y Huang, M Sachan]
   *AI4Math@ICML25*, 2025  
   [[OpenReview]](https://openreview.net/forum?id=snoHekTbpd#discussion) 
 
