@@ -10,7 +10,7 @@ draft: false
 # About Me
 
 I'm Ning Wang, a 19-year-old Master's student at ETH Zurich.
-I am interested in machine learning research, in particular large language models, and have been involved in multiple research projects. I currently work as a research assistant at ETH Zurich and at the MPI. 
+I work in machine learning research, in particular large language models, and have been involved in multiple research projects. I currently work as a research assistant at ETH Zurich and at the MPI. 
 
 ## Research Interests
 
