@@ -26,5 +26,3 @@ I've started doing research 5 months ago or so. Most of my work is in progress, 
 - Research Assistant: deep learning for economics, November 2024 - Present (ETH Zurich), language models for genomics, August 2025 - Present (Max Planck Institute for Intelligent Systems)
 - Teaching Assistant: Wireless networking and mobile computing, autumn semester 2023 (ETH Zurich)
 
-
-*For a complete list of publications, see my [Google Scholar](https://scholar.google.com/citations?user=YOURID) profile.*
